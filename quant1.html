@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Quants1</title>
+
+ <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE math PUBLIC "-//W3C//DTD MathML 2.0//EN"
+           "http://www.w3.org/Math/DTD/mathml2/mathml2.dtd">
+  
+<script type="text/javascript">
+
+function rightAnswer(){
+
+	if (typeof(Storage) != "undefined") {
+			
+		 if(document.querySelector('[name="qtn1"]:checked') != null){
+	
+		 var quantAns1 = document.querySelector('[name="qtn1"]:checked');
+		 sessionStorage.setItem("quantAnswer1",quantAns1.value);
+		 return true;
+	
+		}else{
+			alert("please select an answer");
+			return false;
+		 }
+	 }else{
+			alert("Sorry, your browser does not support Web Storage...");
+			return false;
+      	 }
+        
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header style="text-align:center; background-color:#A2AB58;">
+
+<h2>Question 1</h2>
+
+</header>
+
+<fieldset>
+
+<p>Given points (x1,y1) and (x2,y2) select the formula to find equation of the given line.</p>
+
+<aside style="float:right;padding-right:30px;margin-top:-50px;">
+<figure>
+<img src="graph.png" width="400" height="300" alt="Two points on a two dimensional graph"/>
+</figure>
+</aside>
+
+<div align="left" width="100px">
+<form name="question1" action="quant2.html" onsubmit="return rightAnswer()" method="post">
+<table>
+<tr>
+<td><input type="radio" id="opt1" name="qtn1" value="opt1"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+      <mi>y</mi>
+      <mo>=</mo>
+      <mi>m</mi>
+      <mo>&InvisibleTimes;</mo>
+      <mi>x</mi>
+      <mo>+</mo>
+      <mi>c</mi>
+    </mrow>
+  </math></td>
+</tr><br/><tr>
+<td><input type="radio" id="opt2" name="qtn1" value="opt2"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+      <mi>y</mi>
+      <mo>-</mo>
+	  <mrow>
+	  <msub>
+	  <mi>y</mi>
+	 <mn>1</mn></msub>
+	 </mrow>
+      <mo>=</mo>
+      <mi>m</mi>
+      <mi>(</mi>
+      <mi>x</mi>
+      <mo>-</mo>
+	   <mrow>
+	   <msub>
+      <mi>x</mi>
+     <mn>1</mn>
+	 </msub>
+	 </mrow>
+      <mi>)</mi>
+    </mrow>
+  </math> </td>
+</tr>
+
+<tr>
+<td><input type="radio" id="opt3" name="qtn1" value="opt3"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+    <msup>
+    <mrow>
+     <mi>(</mi>
+      <mi>x</mi>
+      <mo>-</mo>
+      <mi>h</mi>
+     <mi>)</mi>
+     </mrow>
+     <mn>2</mn>
+     </msup>
+     <mo>+</mo>
+     	 <msup>
+	 <mrow>
+     <mi>(</mi>
+      <mi>y</mi>
+      <mo>-</mo>
+      <mi>k</mi>
+     <mi>)</mi>
+     </mrow>
+     <mn>2</mn>
+     </msup>
+	 </mrow>
+     <mo>=</mo>
+	<msup>
+     <mi>r</mi>
+     <mn>2</mn>
+     </msup>
+	</mrow>
+  </math></td>
+  <td></td>
+</tr><br/>
+<tr>
+<td><input type="radio" id="opt4" name="qtn1" value="opt4"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+     <mi>y</mi>
+      <mo>-</mo>
+	  <mrow>
+	  <msub>
+      <mi>y</mi>
+     <mi>2</mi></msub>
+	 </mrow>
+     <mo>=</mo>
+	 <mfrac>
+	 <mrow>
+	 <msub>
+     <mi>y</mi>
+     <mi>2</mi></msub>
+     <mo>-</mo>
+	 <msub>
+     <mi>y</mi>
+     <mi>1</mi></msub>
+	 </mrow>
+	 <mrow>
+	 <msub>
+     <mi>x</mi>
+     <mi>2</mi></msub>
+     <mo>-</mo>
+	 <msub>
+     <mi>x</mi>
+     <mi>1</mi></msub>
+	 </mrow>
+     </mfrac>
+     <mo>&InvisibleTimes; </mo>
+     <mi>(</mi>
+      <mi>x</mi>
+      <mo>-</mo>
+	  <msub>
+      <mi>x</mi>
+     <mn>1</mn></msub>
+      <mi>)</mi>
+    </mrow>
+  </math></td>
+</tr>
+</table> 
+<br/><input type="submit" name="answer" value="Submit & Next Question"/> &nbsp;&nbsp;&nbsp;
+<input type="reset" value="Cancel & Clear Selection"/>
+</form>
+</div>
+
+</fieldset>
+
+<footer style="text-align:center;background-color:#A2AB58;">
+<p>copyright &copy Gopika Gogineni<p>
+</footer>
+
+</body>
+</html>
+
+

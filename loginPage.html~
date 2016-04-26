@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Login Page</title>
+
+<script>
+function setSession(){
+
+	var uname = document.getElementById("uname").value;
+	sessionStorage.setItem("username",uname);
+	alert(sessionStorage.getItem("username"));
+	return true;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header style="text-align:center;background-color:#A2AB58;">
+<h2>CmpE 297 Assignment 1</h2>
+</header>
+
+<fieldset style="margin:0 auto;width:300px; height:150px">
+<form name="loginForm" action="quant1.html" onsubmit="return setSession()" method="post">
+<table>
+<tr>
+<td>User Name:</td>
+<td><input type="text" id="uname" name="uname" required/></td>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input type="password" id="pwd" name="pass" required/></td>
+</tr>
+<tr>
+<td><a href="#">Create Account/Forgot?</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="enter" name="login" value="Login"/></td>
+</tr>
+</table>
+
+</form>
+
+</fieldset>
+
+<footer style="text-align:center;background-color:#A2AB58">
+<p>copyright &copy Gopika Gogineni<p>
+</footer>
+</body>
+</html>
+
+

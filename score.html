@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<script>
+function exit(){
+window.location.href = 'loginPage.html';
+}
+
+</script>
+<title>Score Report</title>
+
+</head>
+
+<body>
+
+<header style="text-align:center;background-color:#A2AB58;">
+<h1>Score Card</h1>
+</header>
+
+
+<section style="text-align:center;">
+<p>Student Username:
+<div id="uname"></div>
+<script>
+//Retrieve username from session storage and display
+document.getElementById("uname").innerHTML = sessionStorage.getItem("username");
+</script>
+</p>
+</section>
+
+<fieldset>
+
+<!-- Section1 --->
+<details>
+<summary>Quantitative Section</summary>
+<p>Number of Questions Answered: 2 </p>
+<p>Number of correct Answers:
+<div id="totalQuantCorrectAns"></div>
+<script>
+var quantCorrectAns = 0, quantQuestions = 2;
+
+var userQuantAns1 = sessionStorage.getItem("quantAnswer1");
+
+if(userQuantAns1 == "opt4"){
+	quantCorrectAns++;
+}
+
+var userQuantAns2 = sessionStorage.getItem("quantAnswer2");
+
+if(userQuantAns2 == "opt1"){
+	quantCorrectAns++;
+}
+// assign the result to display at the Number of correct Answers
+document.getElementById("totalQuantCorrectAns").innerHTML = quantCorrectAns;
+sessionStorage.setItem("quantCorrectAnswers",quantCorrectAns);
+
+</script>
+</p>
+<p>Score: <div id="quantScore"></div>
+<script>
+
+var c1= parseInt(sessionStorage.getItem("quantCorrectAnswers"));
+var quantscore = (((c1)/(quantQuestions)) * 100);
+document.getElementById("quantScore").innerHTML = quantscore;
+sessionStorage.setItem("QuantsScore",quantscore);
+
+</script>
+
+</p>
+
+</details>
+
+<!-- Section2 --->
+<details>
+<summary>Reading Section</summary>
+<p>Number of Questions Answered: 1</p> 
+<p>Number of correct Answers:
+<div id="totalenglishCorrectAns"></div>
+<script>
+var englishCorrectAns = 0, englishQuestions = 1;
+
+var userAns1 = sessionStorage.getItem("mark1Answer");
+var userAns2 =	sessionStorage.getItem("mark2Answer");
+if((userAns1 == "$650") && (userAns2 == "Twitter" )){
+	englishCorrectAns++;
+}
+
+document.getElementById("totalenglishCorrectAns").innerHTML = englishCorrectAns;
+sessionStorage.setItem("englishCorrectAnswer",englishCorrectAns);
+
+</script>
+</p>
+<p>Score: <div id="englishScore"></div>
+
+<script>
+
+var c1= parseInt(sessionStorage.getItem("englishCorrectAnswer"));
+var englishscore = (((c1)/(englishQuestions)) * 100);
+document.getElementById("englishScore").innerHTML = englishscore;
+sessionStorage.setItem("EnglishScore",englishscore);
+
+</script>
+</p>
+</details>
+
+<!-- Section3 --->
+
+<details>
+<summary>Audio/Video Section</summary>
+<p>Number of Questions Answered: 1</p>
+<p>Number of correct Answers:
+
+<div id="totalListenCorrectAns"></div>
+<script>
+var listenCorrectAns = 0, listenQuestions = 1;
+
+var userlistenAns = sessionStorage.getItem("listenAnswer");
+
+if(userlistenAns == "opt1"){
+	listenCorrectAns++;
+}
+
+document.getElementById("totalListenCorrectAns").innerHTML = listenCorrectAns;
+sessionStorage.setItem("listenCorrectAnswer",listenCorrectAns);
+
+</script>
+</p>
+<p>Score: <div id="listenScore"></div>
+<script>
+
+var c1= parseInt(sessionStorage.getItem("listenCorrectAnswer"));
+var listenscore = (((c1)/(listenQuestions)) * 100);
+document.getElementById("listenScore").innerHTML = listenscore;
+sessionStorage.setItem("ListeningScore",listenscore);
+</script>
+</p>
+</details>
+<details>
+<summary>Cumulative Score</summary>
+<p>Cumulative score: <div id="CumulativeScore"></div>
+<script>
+var score1 = parseInt(sessionStorage.getItem("QuantsScore",quantscore));
+var score2 = parseInt(sessionStorage.getItem("EnglishScore",englishscore));
+var score3 = parseInt(sessionStorage.getItem("ListeningScore",listenscore));
+var totalScore = (score1 + score2 + score3);
+document.getElementById("CumulativeScore").innerHTML = totalScore;
+</script>
+</p>
+</details>
+<div style="text-align:center;">
+<p>Thank you for taking the test with us!</p>
+<input type="button" id="ans" name="answer" value="Click to Exit" onclick="exit()"/>
+</div>
+</fieldset>
+
+
+<footer style="text-align:center;background-color:#A2AB58;">
+<p>copyright &copy Gopika Gogineni<p>
+</footer>
+
+
+</body>
+</html>
+
+

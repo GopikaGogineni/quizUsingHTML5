@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Survey</title>
+
+<script>
+
+function surveyInput(){
+	var form = document.forms["survey"];	
+	var comment = form["comm"].value;
+	var cityList = form["cityList"].value;
+	var roomNumber = form["roomNo"].value;
+			
+	if((comment == "") || (cityList == "") || (roomNumber == "")){
+		alert("Fill the form or click 'Skip to get score'");
+		return false;
+	}else{
+		return true;
+	 }
+}
+
+function skip(){
+	window.location.href="score.html";
+}
+</script>
+
+</head>
+
+<body>
+
+<header style="text-align:center;background-color:#A2AB58;">
+
+<h2>Test Center Survey</h2>
+
+</header>
+
+<fieldset>
+
+<form name="survey" action="score.html" onsubmit="return surveyInput()" method="post">
+<table>
+<tr>
+<td><label>How do you Like the center?</label></td>
+</tr>
+<tr></tr>
+<tr>
+<td><label>Comments:</label></td>
+<td><textarea name="comment" id="comment" rows=4 cols=50></textarea></td>
+</tr>
+<tr></tr>
+<tr>
+<td><label>Please select test center city and Room</label></td>
+</tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr>
+<td><label>City:</label>
+<input list="cities" name="city" id="cityList" size="8"/>
+<datalist id="cities">
+<option value="San Jose"> 
+<option value="Santa Clara">
+<option value="San Francisco">
+<option value="Mountain View">
+<option value="Berkley">
+<option value="Sacramento">
+<option value="Sunnyvale">
+<option value="Palo Alto">
+<option value="Redwood City">
+<option value="San Mateo">
+</datalist></td>
+
+<td><label>Room:</label>
+<input list="rooms" name="roomNo" id="roomNo" size="6"/>
+<datalist id="rooms">
+<option value="Room 101">
+<option value="Room 103">
+<option value="Room 202">
+<option value="Room 205">
+<option value="Room 208">
+<option value="Room 303">
+<option value="Room 307">
+<option value="Room 405">
+<option value="Room 406">
+<option value="Room 503">
+</datalist></td>
+</tr>
+</table><br>
+
+<input type="submit" id="take" name="takeSurvey" value="Submit & Get Score"/>
+<input type="button" name="skipSurvey" value="Skip & Get Score" onclick="skip()"/>
+ 
+</form>
+
+</fieldset>
+
+<footer style="text-align:center;background-color:#A2AB58;">
+<p>copyright &copy Gopika Gogineni<p></footer>
+</body>
+</html>
+
+

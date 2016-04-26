@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Quants)</title>
+
+ <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE math PUBLIC "-//W3C//DTD MathML 2.0//EN"
+           "http://www.w3.org/Math/DTD/mathml2/mathml2.dtd">
+
+<script>
+function rightAnswer(){
+
+		if (typeof(Storage) != "undefined") {
+			
+		if(document.querySelector('[name="qtn2"]:checked') != null){
+	
+		 var quantAns2 = document.querySelector('[name="qtn2"]:checked');
+		 sessionStorage.setItem("quantAnswer2",quantAns2.value);
+		 return true;
+	
+		}else{
+			alert("please select an answer");
+			return false;
+		}
+	}else{
+		alert("Sorry, your browser does not support Web Storage...");
+		return false;
+	}
+
+
+}
+</script>
+
+</head>
+
+<body>
+
+<header style="text-align:center;background-color:#A2AB58;">
+
+<h2>Question 2</h2>
+
+</header>
+
+<fieldset>
+
+<p>Select the cosine theorem formula.</p>
+
+<form name="question2" action="english.html" onsubmit="return rightAnswer()" method="post">
+<table>
+<tr>
+<td><input type="radio" name="qtn2" value="opt1"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+      <mi>cos</mi>
+      <mi>(</mi>
+      <mi>&alpha;</mi>
+      <mo>&plusmn;</mo>
+      <mi>&beta;</mi>
+      <mi>)</mi>
+      <mo>=</mo>
+      <mi>cos</mi>
+      <mi>&alpha;</mi>
+      <mi>cos</mi>
+      <mi>&beta;</mi>
+      <mo>&#x2213;</mo>
+      <mi>sin</mi>
+      <mi>&alpha;</mi>
+      <mi>sin</mi>
+      <mi>&beta;</mi>
+    </mrow>
+  </math></td>
+</tr><tr>
+<td><input type="radio" name="qtn2" value="opt2"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+      <mi>sin</mi>
+      <mi>(</mi>
+      <mi>&alpha;</mi>
+      <mo>&plusmn;</mo>
+      <mi>&beta;</mi>
+      <mi>)</mi>
+      <mo>=</mo>
+      <mi>sin</mi>
+      <mi>&alpha;</mi>
+      <mi>cos</mi>
+      <mi>&beta;</mi>
+      <mo>&plusmn;</mo>
+      <mi>cos</mi>
+      <mi>&alpha;</mi>
+      <mi>sin</mi>
+      <mi>&beta;</mi>
+    </mrow>
+  </math></td>
+</tr><tr>
+<td><input type="radio" name="qtn2" value="opt3"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+      <mi>sin</mi>
+      <mi>&alpha;</mi>
+      <mo>+</mo>
+      <mi>sin</mi>
+      <mi>&beta;</mi>
+      <mo>=</mo>
+	  <mrow>
+      <mn>2</mn>
+      <mi>sin</mi>
+      <mi>(</mi>
+	  <mrow>
+      <mfrac>
+	  <mrow>
+      <mi>&alpha;</mi>
+      <mo>+</mo>
+      <mi>&beta;</mi>
+	  </mrow>
+	  <mrow>
+      <mn>2</mn>
+	  </mrow>
+      </mfrac>
+      <mi>)</mi>
+      <mi>cos</mi>
+      <mi>(</mi>
+      <mfrac>
+	  <mrow>
+      <mi>&alpha;</mi>
+      <mo>-</mo>
+      <mi>&beta;</mi>
+	  </mrow>
+	  <mrow>
+      <mn>2</mn>
+	  </mrow>
+      </mfrac>
+      <mi>)</mi>
+    </mrow>
+  </math></td>
+</tr><tr>
+<td><input type="radio" name="qtn2" value="opt4"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+      <mi>sin</mi>
+      <mi>&alpha;</mi>
+      <mo>-</mo>
+      <mi>sin</mi>
+      <mi>&beta;</mi>
+      <mo>=</mo>
+	  <mrow>
+      <mn>2</mn>
+      <mi>cos</mi>
+      <mi>(</mi>
+	  </mrow>
+      <mfrac>
+	  <mrow>
+      <mi>&alpha;</mi>
+      <mo>+</mo>
+      <mi>&beta;</mi>
+	  </mrow>
+	  <mrow>
+      <mn>2</mn>
+	  </mrow>
+      </mfrac>
+      <mi>)</mi>
+      <mi>sin</mi>
+      <mi>(</mi>
+      <mfrac>
+	  <mrow>
+      <mi>&alpha;</mi>
+      <mo>-</mo>
+      <mi>&beta;</mi>
+	  </mrow>
+	  <mrow>
+      <mn>2</mn>
+	  </mrow>
+      </mfrac>
+      <mi>)</mi>
+    </mrow>
+  </math></td>
+</tr>
+</table><br/>
+<input type="submit" id="ans" name="answer" value="Submit & Next Question"/>
+<input type="reset" value="Cancel & Clear Selection "/>
+</form>
+</fieldset>
+
+<footer style="text-align:center;background-color:#A2AB58;">
+<p>copyright &copy Gopika Gogineni<p>
+</footer>
+
+</body>
+</html>
+
+

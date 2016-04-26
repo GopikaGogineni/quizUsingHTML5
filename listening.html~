@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Listening)</title>
+
+<script>
+
+function rightAnswer(){
+
+	if (typeof(Storage) != "undefined") {
+			
+		if(document.querySelector('[name="qtn4"]:checked') != null){
+	
+		 var listenAns = document.querySelector('[name="qtn4"]:checked');
+		 sessionStorage.setItem("listenAnswer",listenAns.value);
+		 return true;
+	
+		}else{
+			alert("please select an answer");
+			return false;
+		}
+	}else{
+		alert("Sorry, your browser does not support Web Storage...");
+		return false;
+	}
+
+}
+</script>
+
+</head>
+
+<body>
+
+<header style="text-align:center;background-color:#A2AB58;">
+<h2>Question 4</h2>
+</header>
+
+<fieldset>
+
+<p>Watch the video and answer the following question.<br/><br/>
+Which of the following is a most suitable theme of the video? </p>
+
+<aside style="float:right;margin-top:-50px;">
+<video  width="500px" height="300px" controls>
+  <source src="nasa.mp4" type="video/mp4">
+  <source src="nasa.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<p><b>The Mysterious Holes in the Atmosphere on Venus </b> <br>
+Source:http://www.nasa.gov/multimedia/downloadable-video-page/#.VBml2v7gCcM  
+</p>
+
+</aside>
+
+<aside style="float:left;padding-right:30px;margin-top:50px;">
+<form name="multipleChoice" action="survey.html" onsubmit="return  rightAnswer()" method="post">
+<table>
+<tr>
+<td><input type="radio" name="qtn4" value="opt1">NASA</td>
+<td></td>
+<td><input type="radio" name="qtn4" value="opt2">Disney</td>
+</tr>
+<tr></tr>
+<tr></tr>
+<tr>
+<td><input type="radio" name="qtn4" value="opt3">Facebook</td>
+<td></td>
+<td><input type="radio" name="qtn4" value="opt4">Twitter</td>
+</tr>
+<tr></tr>
+<tr></tr>
+</table><br/>
+<input type="submit" id="ans" name="answer" value="Submit & Next Question"/>&nbsp;&nbsp;
+<input type="reset" value="Cancel & Clear Selection "/>
+</form>
+</aside>
+</fieldset>
+
+<footer style="text-align:center;background-color:#A2AB58;">
+<p>copyright &copy Gopika Gogineni<p>
+</footer>
+</body>
+</html>
+
+

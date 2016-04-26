@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Page3(Vocab)</title>
+
+<style>
+	#firstOptions, #secondOptions{
+			display:none;
+		}
+</style>
+
+
+<script>
+function rightAnswer(){
+
+
+	if (typeof(Storage) != "undefined") {
+			if((document.querySelector('[name="english1"]:checked') == null) || (document.querySelector('[name="english2"]:checked') == null)){
+		
+				alert("Please select both the values");
+				return false;
+			}else{
+
+				var a = document.querySelector('[name="english1"]:checked');
+				var b = document.querySelector('[name="english2"]:checked');
+				sessionStorage.setItem("mark1Answer", a.value);
+				sessionStorage.setItem("mark2Answer", b.value);
+				return true;
+			}
+			
+			
+	}else{
+			alert("Sorry, your browser does not support Web Storage...");
+			return false;
+	 }
+	
+}	
+
+
+		//This function displays/hides options based on the blank clicked
+function viewOptions(eleId){
+	if(eleId == "firstMark"){
+				
+		document.getElementById("firstOptions").style.display = "block";
+		document.getElementById("secondOptions").style.display = "none";
+	}
+	if(eleId == "secondMark"){
+				
+		//document.getElementById("firstOptions").style.display = "block";
+		document.getElementById("secondOptions").style.display = "block";
+		document.getElementById("firstOptions").style.display = "none";
+	}
+	
+}
+
+function fillBlank1(){
+			
+		var x = document.querySelector('[name="english1"]:checked');
+		document.getElementById("firstMark").innerHTML= x.value;	
+}
+
+function fillBlank2(){
+		var x = document.querySelector('[name="english2"]:checked');
+		document.getElementById("secondMark").innerHTML= x.value;	
+}	
+
+
+function resetBlanks(){
+		document.getElementById("firstMark").innerHTML= "$____";
+		document.getElementById("secondMark").innerHTML="______";
+			return true;
+}
+	
+</script>
+
+
+</head>
+
+<body>
+
+
+<header style="text-align:center;background-color:#A2AB58;">
+
+<h2>Question 3</h2>
+
+</header>
+
+<fieldset>
+<p>As per the latest twitter news, complete the article snippet given by <br>
+selecting appropriate choices for the blanks.
+ </p>
+<aside style="float:right;padding-right:30px;text-align:justify;margin-top:-50px;">
+ <p>
+ " <br>
+ Twitter wants more cash.The company announced two <br>
+ <mark id="firstMark" onclick="viewOptions(this.id)">$____</mark> million debt offerings in a filing today,ecah with <br>
+ a potential $100 increase provided that the sales are <br>
+ oversubsribed. Assuming full tip, including the $100 million <br>
+ boosters, <mark id="secondMark" onclick="viewOptions(this.id)">_________</mark> will raise up to $1.5 billion with two <br>
+ offerings.<br> 
+<br> " 
+ </p>
+ 
+ 
+<p>Source: http://techcrunch.com/2014/09/10/twitter-to-raise-up- <br>
+to-1-5b-in-debt-offering/
+</p>
+</aside>
+
+<aside style="float:left;padding-left:20px;margin-top:50px;">
+
+<form name="multipleChoice" action="listening.html" onsubmit="return  rightAnswer()" onreset="return resetBlanks()"  method="post">
+<span id="firstOptions">
+	<input type="radio" name="english1" onclick="fillBlank1()" value="$650"> Option 1 Mark 1: $650<br>
+	<input type="radio" name="english1" onclick="fillBlank1()" value="$550"> Option 2 Mark 1: $550<br>
+	<input type="radio" name="english1" onclick="fillBlank1()" value="$750"> Option 3 Mark 1: $750<br>
+	</span>
+<span id="secondOptions">
+	<input type="radio" name="english2" onclick="fillBlank2()" value="Twitter"> Option 1 Mark 2: Twitter<br>
+	<input type="radio" name="english2" onclick="fillBlank2()" value="Google"> Option 1 Mark 2: Google<br>
+	<input type="radio" name="english2" onclick="fillBlank2()" value="Facebook"> Option 1 Mark 2: Facebook<br>
+	</span>
+<input type="submit" id="answer" name="answer" value="Submit Answer"/>
+<input type="reset" name="answer" value="Cancel and Clear Selection"/>
+</form>
+</aside>
+
+</fieldset>
+
+<footer style="text-align:center;background-color:#A2AB58;">
+<p>copyright &copy Gopika Gogineni<p>
+</footer>
+</body>
+</html>
+
+
